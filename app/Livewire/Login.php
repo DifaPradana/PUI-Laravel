@@ -33,15 +33,25 @@ class Login extends Component
         ], $message);
 
 
-        // if (Auth::attempt([
-        //     'no_hp' => $this->no_hp,
-        //     'password' => $this->password
-        // ])) {
-        //     return redirect()->route('welcome');
-        // } else {
-        //     return redirect()->route('login');
-        // }
+        if (Auth::attempt([
+            'no_hp' => $this->no_hp,
+            'password' => $this->password
+        ])) {
+            return redirect()->route('dashboard');
+        } else {
+            $this->dispatch('sweet-alert', icon: 'error', title: 'Nomor HP atau Password salah');
+            return redirect()->back();
+        }
 
-        dd($this->all());
+        // dd($this->all());
+
+        $this->dispatch('sweet-alert', icon: 'success', title: 'Register berhasil, silahkan login');
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+        $this->dispatch('sweet-alert', icon: 'success', title: 'Register Logout');
+        return redirect()->route('login');
     }
 }

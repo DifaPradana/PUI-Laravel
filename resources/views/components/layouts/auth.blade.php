@@ -7,6 +7,8 @@
     <title>Kartika Resto</title>
     <link rel="shortcut icon" type="image/png" href="images/logos/favicon.png" />
     <link rel="stylesheet" href="css/styles.min.css" />
+    @vite(['resources/js/app.js'])
+
     <style>
         /* Menghilangkan spinner di Chrome, Safari, Edge, dan Opera */
         input[type=number]::-webkit-outer-spin-button,
@@ -29,10 +31,13 @@
         <div
             class="position-relative overflow-hidden radial-gradient min-vh-100 d-flex align-items-center justify-content-center">
             {{ $slot }}
+
+            <x-alert.sweet-alert />
         </div>
     </div>
     <script src="libs/jquery/dist/jquery.min.js"></script>
     <script src="libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </body>
 
 </html>

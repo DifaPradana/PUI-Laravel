@@ -46,10 +46,10 @@ class Register extends Component
             'no_hp' => $this->no_hp,
             'password' => bcrypt($this->password),
             'username' => $this->username,
-            'role_id' => 4,
+            'id_role' => 4,
         ]);
 
-        $this->dispatch('sweet-alert', icon: 'success', title: 'Status Pembayaran Berhasil Diubah');
+        $this->dispatch('sweet-alert', icon: 'success', title: 'Register berhasil, silahkan login');
 
         return redirect()->route('login');
     }

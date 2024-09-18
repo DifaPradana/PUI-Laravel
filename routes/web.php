@@ -1,6 +1,7 @@
 <?php
 
 use App\Livewire\Login;
+use App\Livewire\PengelolaDashboard;
 use App\Livewire\Register;
 use Illuminate\Support\Facades\Route;
 
@@ -21,6 +22,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', Login::class)->name('login');
 Route::get('/register', Register::class)->name('register');
-Route::get('/dashboard', function () {
+Route::get('/logout', [Login::class, 'logout'])->name('logout');
+
+
+
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/dashboard', PengelolaDashboard::class)->name('dashboard');
+});
+
+Route::get('/dashboardss', function () {
     return view('welcome');
 })->name('welcome');
