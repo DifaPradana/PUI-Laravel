@@ -5,7 +5,8 @@
 @endpush
 
 @section('content')
-    @livewire('pengelola-dashboard')
+    {{-- @livewire('account-creator') --}}
+    @livewire('akun-manager')
 @endsection
 
 @push('scripts')

@@ -4,11 +4,25 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    @yield('title')
+    <title>Kartika Resto</title>
     <link rel="icon" href="{{ asset('images/logos/favicon.png') }}" />
     <link rel="stylesheet" href="{{ asset('css/styles.min.css') }}" />
+    @vite(['resources/js/app.js'])
     {{-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> --}}
 
+    <style>
+        /* Menghilangkan spinner di Chrome, Safari, Edge, dan Opera */
+        input[type=number]::-webkit-outer-spin-button,
+        input[type=number]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        /* Menghilangkan spinner di Firefox */
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+    </style>
 </head>
 
 <body>
@@ -30,20 +44,9 @@
             @include('components.partials.header')
             <!--  Header End -->
 
-
-
             <div class="container-fluid">
-                {{-- <x-sweet-alert /> --}}
-                {{-- @if (session('success'))
-                    <script>
-                        Swal.fire({
-                            icon: 'success',
-                            title: 'Berhasil',
-                            text: '{{ session('message') }}',
-                        })
-                    </script>
-                @endif --}}
-                @yield('content')
+                {{ $slot }}
+                <x-alert.sweet-alert />
             </div>
         </div>
     </div>

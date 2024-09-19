@@ -35,7 +35,7 @@ class Register extends Component
         ];
 
         $this->validate([
-            'no_hp' => ['required', 'regex:/^08[0-9]{7,}/', 'unique:users'],
+            'no_hp' => ['required', 'regex:/^08[0-9]{7,}/', 'unique:users', 'min:9', 'numeric', 'max:15'],
             'password' => 'required|min:8',
             'username' => 'required|min:3'
         ], $message);

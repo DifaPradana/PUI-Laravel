@@ -24,6 +24,8 @@ class User extends Authenticatable
         'id_role',
     ];
 
+    protected $primaryKey = 'id_user';
+
     /**
      * The attributes that should be hidden for serialization.
      *
@@ -43,8 +45,14 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function role()
+    public function scopeSearch($query, $value)
     {
-        return $this->belongsTo(Role::class);
+        return $query->where('username', 'like', "%{$value}%")
+            ->orWhere('no_hp', 'like', "%{$value}%");
+    }
+
+    public function roles()
+    {
+        return $this->belongsTo(Role::class, 'id_role', 'id_role');
     }
 }

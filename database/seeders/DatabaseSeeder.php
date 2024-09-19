@@ -25,5 +25,15 @@ class DatabaseSeeder extends Seeder
             ['nama_role' => 'Chef'],
             ['nama_role' => 'Pelanggan'],
         ]);
+
+        \App\Models\User::factory()->create([
+            'no_hp' => '081234567890',
+            'username' => 'pengelola',
+            'password' => bcrypt('asdasdasd'),
+            'id_role' => 1,
+            'status' => 'aktif',
+        ]);
+
+        \App\Models\User::factory(100)->create();
     }
 }
