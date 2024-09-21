@@ -35,5 +35,22 @@ class DatabaseSeeder extends Seeder
         ]);
 
         \App\Models\User::factory(100)->create();
+
+        \App\Models\KategoriMenu::factory()->createMany([
+            // ['nama_kategori_menu' => 'Appetizers'],
+            // ['nama_kategori_menu' => 'Main Courses'],
+            // ['nama_kategori_menu' => 'Sides'],
+            // ['nama_kategori_menu' => 'Desserts'],
+            // ['nama_kategori_menu' => 'Beverages'],
+            // ['nama_kategori_menu' => 'Snacks'],
+            // ['nama_kategori_menu' => 'Speciality'],
+            ['nama_kategori_menu' => 'Pembuka'],
+            ['nama_kategori_menu' => 'Hidangan Utama'],
+            ['nama_kategori_menu' => 'Sampingan'],
+            ['nama_kategori_menu' => 'Makanan Penutup'],
+            ['nama_kategori_menu' => 'Minuman'],
+            ['nama_kategori_menu' => 'Camilan'],
+            ['nama_kategori_menu' => 'Spesial'],
+        ]);
     }
 }

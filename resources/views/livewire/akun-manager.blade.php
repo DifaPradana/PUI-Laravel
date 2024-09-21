@@ -62,7 +62,7 @@
                                     <td class="px-4 py-3 text-center text-black">{{ $user->updated_at }}</td>
                                     <td class="px-4 py-3  text-center text-black">
                                         <a href="#editAkunModal{{ $user->id_user }}" data-bs-toggle="modal"
-                                            class="btn btn-primary m-1">
+                                            class="btn btn-warning m-1">
                                             <i class="ti ti-pencil" aria-hidden="true"></i>
                                         </a>
                                         <button

@@ -38,6 +38,14 @@
                         <span class="hide-menu">Manajemen Akun</span>
                     </a>
                 </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link" href="{{ route('manajemen-menu') }}" aria-expanded="false">
+                        <span>
+                            <i class="ti ti-layout-grid2"></i>
+                        </span>
+                        <span class="hide-menu">Manajemen Menu</span>
+                    </a>
+                </li>
             @endif
             {{-- <li class="sidebar-item">
                     <a class="sidebar-link" href="./index.html" aria-expanded="false">

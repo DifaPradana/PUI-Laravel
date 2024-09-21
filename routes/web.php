@@ -2,6 +2,7 @@
 
 use App\Livewire\AkunManager;
 use App\Livewire\Login;
+use App\Livewire\MenuManager;
 use App\Livewire\PengelolaDashboard;
 use App\Livewire\Register;
 use Illuminate\Support\Facades\Route;
@@ -32,4 +33,5 @@ Route::get('/access-denied', function () {
 Route::group(['middleware' => ['auth', 'role:1'], 'prefix' => 'pengelola'], function () {
     Route::get('/dashboard', PengelolaDashboard::class)->name('pengelola-dashboard');
     Route::get('/manajemen-akun', AkunManager::class)->name('manajemen-akun');
+    Route::get('/manajemen-menu', MenuManager::class)->name('manajemen-menu');
 });
